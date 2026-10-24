@@ -1,11 +1,12 @@
 import mongoose from "mongoose"
 
-const connetDB = () =>{
+const connetDB = async() =>{
     try{
-        mongoose.connect("mongodb+srv://<db_username>:<db_password>@cluster0.fatu4mp.mongodb.net/");
+        await mongoose.connect("mongodb+srv://Name:password@cluster0.fatu4mp.mongodb.net/");
         console.log("Success: Connected to MongoDB");
     }catch{
-
+        console.log("Failure: Unconnected to MongoDB");
+        throw new Error();
     }
 }
 
